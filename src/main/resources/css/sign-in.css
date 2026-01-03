@@ -1,0 +1,31 @@
+/* Fișier: sign-in.css */
+
+/* Stil pentru background-ul principal (Preia din .root al paginii de login) */
+.root {
+    -fx-background-color: #1446A0; /* CORP ALBASTRU */
+}
+
+/* Stilul comun pentru Butoanele DUCK și PERSON (Preluat din #loginButton) */
+/* Acesta este selectorul cu specificitate mare, necesar pentru a aplica stilul */
+.button.custom-page-button {
+    -fx-background-color: #C6E2FF; /* Fundal mov deschis (albastru foarte deschis) */
+
+    /* Text Albastru (cerința de font inițial/albastru) */
+    -fx-text-fill: #1446A0;
+
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+    -fx-padding: 12 25;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 5, 0, 0, 2);
+    -fx-opacity: 0.9;
+}
+
+.button.custom-page-button:hover {
+    -fx-background-color: #1446A0; /* Fundal albastru închis la hover (ca la login) */
+    -fx-text-fill: white; /* Text alb la hover */
+    -fx-opacity: 1;
+}
+
+/* Deoarece etichetele sunt stilizate direct în FXML, nu mai avem nevoie de clase pentru ele aici. */

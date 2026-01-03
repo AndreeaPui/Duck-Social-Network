@@ -1,0 +1,81 @@
+
+import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
+import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
+import org.example.controller.UserController;
+import org.example.domain.*;
+import org.example.repository.PagedRepository;
+import org.example.repository.database.*;
+import org.example.service.*;
+import org.example.validatori.Validate;
+
+import java.io.IOException;
+
+public class HelloApplication extends Application{
+        Validate validator;
+        RepoDBUtilizatori repoUsers;
+        RepoDBFriendships repoFriendships;
+        PagedRepository<Card<?extends Rata>> repoCard;
+        PagedRepository<Event> repoEvent;
+        RepoDBUserEvent repoDBUserEvent;
+
+        ServiceFriendship serviceFriendship;
+        ServiceCard serviceCard;
+        ServiceEvenimente serviceEvenimente;
+        Service service;
+
+        ServiceMain serviceMain;
+
+        public static void main(String[] args) {
+            launch(args);
+        }
+
+        @Override
+        public void start(Stage primaryStage) throws IOException {
+//        String fileN = ApplicationContext.getPROPERTIES().getProperty("data.tasks.messageTask");
+//        messageTaskRepository = new InFileMessageTaskRepository
+//                (fileN, new MessageTaskValidator());
+//        messageTaskService = new MessageTaskService(messageTaskRepository);
+            //messageTaskService.getAll().forEach(System.out::println);
+
+            System.out.println("Reading data from file");
+            String url = "jdbc:postgresql://localhost:5432/DuckNetwork";
+            String user = "postgres";
+            String pass = "postgres";
+
+            validator = new Validate();
+            repoUsers = new RepoDBUtilizatori(url,user, pass);
+            repoFriendships = new RepoDBFriendships(url,user,pass);
+            repoCard = new RepoDBCard(url,user,pass);
+            repoEvent = new RepoDBEvent(url,user,pass);
+            repoDBUserEvent = new RepoDBUserEvent(url,user,pass);
+
+            serviceFriendship = new ServiceFriendship(repoUsers,repoFriendships);
+            serviceCard = new ServiceCard(repoCard,repoUsers,validator);
+            serviceEvenimente = new ServiceEvenimente(repoEvent ,repoUsers,repoDBUserEvent,validator);
+            service = new Service(repoUsers, serviceFriendship,serviceEvenimente,validator);
+
+            serviceMain = new  ServiceMain(service,serviceFriendship,serviceCard,serviceEvenimente);
+
+            //utilizatorRepository.findAll().forEach(x-> System.out.println(x));
+
+            initView(primaryStage);
+            primaryStage.setWidth(800);
+            primaryStage.show();
+        }
+
+        private void initView(Stage primaryStage) throws IOException {
+
+            // FXMLLoader fxmlLoader = new FXMLLoader();
+            //fxmlLoader.setLocation(getClass().getResource("com/example/guiex1/views/UtilizatorView.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("/v1.1.fxml"));
+
+            AnchorPane userLayout = fxmlLoader.load();
+            primaryStage.setScene(new Scene(userLayout));
+
+            DuckController userController = fxmlLoader.getController();
+            userController.setUtilizatorService(service);
+        }
+}  deci vreau in tab ul de persoane sa adaug aceleasi functionalizati ca in cel de Ducks ..cum ar trb sa faca asta?

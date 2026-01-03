@@ -1,0 +1,193 @@
+/* ============================================================
+   ROOT (GLOBAL APP STYLE) – FUNDAL MODERN + FONT
+   ============================================================ */
+.root {
+    -fx-font-family: "Segoe UI", Roboto, sans-serif;
+
+    /* Fundal albastru mai închis */
+    -fx-background-color: linear-gradient(
+        to bottom right,
+        #B7D3FF,   /* albastru mai pronunțat */
+        #C6DAFF,
+        #D4E2FF
+    );
+}
+
+
+/* ============================================================
+   PAGE TITLES (MUCH BIGGER, BOLD, COLORFUL)
+   ============================================================ */
+.label.page-title {
+    -fx-font-size: 32px;
+    -fx-font-weight: 800;
+    -fx-text-fill: linear-gradient(to right, #1976D2, #512DA8);
+    -fx-padding: 20 0 30 0;
+}
+
+/* Secondary section titles */
+.label.section {
+    -fx-font-size: 18px;
+    -fx-text-fill: #37474F;
+    -fx-font-weight: 700;
+    -fx-padding: 10 0 10 0;
+}
+
+/* ============================================================
+   TAB PANE – GRADIENT + COLORS
+   ============================================================ */
+.tab-pane {
+    -fx-background-color: transparent;
+    -fx-padding: 10;
+}
+
+.tab-pane .tab-header-background {
+    -fx-background-color: linear-gradient(to right, #1976D2, #512DA8);
+}
+
+.tab-pane .tab {
+    -fx-padding: 8 22;
+    -fx-background-radius: 10 10 0 0;
+    -fx-font-size: 14px;
+    -fx-text-fill: white;
+    -fx-background-color: transparent;
+}
+
+.tab-pane .tab:hover {
+    -fx-background-color: rgba(255,255,255,0.25);
+}
+
+.tab-pane .tab:selected {
+    -fx-background-color: white;
+    -fx-text-fill: #1976D2;
+    -fx-font-weight: bold;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.25), 9, 0.3, 0, 3);
+}
+
+/* ===== REMOVE BLUE FOCUS OUTLINE FROM TABS ===== */
+.tab:focused {
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
+}
+
+.tab:selected:focused {
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
+}
+
+.tab-pane:focused {
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
+}
+
+/* ============================================================
+   TABLEVIEW – FUTURISTIC CARD DESIGN
+   ============================================================ */
+.table-view {
+    -fx-background-color: white;
+    -fx-background-radius: 14;
+    -fx-border-radius: 14;
+    -fx-padding: 12;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.16), 15, 0.2, 0, 4);
+}
+
+.table-view .column-header-background {
+    -fx-background-color: linear-gradient(to right, #1976D2, #26C6DA);
+    -fx-background-radius: 14 14 0 0;
+}
+
+.table-view .column-header .label {
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+
+.table-row-cell:odd {
+    -fx-background-color: #F9FBFD;
+}
+
+.table-row-cell:even {
+    -fx-background-color: white;
+}
+
+.table-row-cell:selected {
+    -fx-background-color: #63A4FF;
+    -fx-text-fill: white;
+}
+
+/* ============================================================
+   BUTTONS – MATERIAL DESIGN WITH MULTIPLE COLORS
+   ============================================================ */
+.button {
+    -fx-background-color: linear-gradient(to right, #1976D2, #512DA8);
+    -fx-background-radius: 8;
+    -fx-text-fill: white;
+    -fx-padding: 10 20;
+    -fx-font-size: 15px;
+    -fx-font-weight: 600;
+    -fx-cursor: hand;
+}
+
+.button:hover {
+    -fx-background-color: linear-gradient(to right, #1565C0, #4527A0);
+}
+
+.button:pressed {
+    -fx-background-color: #0D47A1;
+}
+
+/* ALTERNATIVE BUTTON COLORS */
+.button.green {
+    -fx-background-color: linear-gradient(to right, #00897B, #26A69A);
+}
+
+.button.orange {
+    -fx-background-color: linear-gradient(to right, #FB8C00, #F57C00);
+}
+
+.button.pink {
+    -fx-background-color: linear-gradient(to right, #EC407A, #D81B60);
+}
+
+/* Small buttons */
+.button.small {
+    -fx-background-color: #EEEEEE;
+    -fx-text-fill: #333;
+    -fx-padding: 4 12;
+    -fx-background-radius: 6;
+}
+
+/* ============================================================
+   COMBOBOX – CLEAN MATERIAL STYLE
+   ============================================================ */
+.combo-box {
+    -fx-background-color: white;
+    -fx-border-color: #B0BEC5;
+    -fx-border-radius: 6;
+    -fx-background-radius: 6;
+    -fx-padding: 6;
+}
+
+.combo-box:hover {
+    -fx-border-color: #1976D2;
+}
+
+.combo-box:focused {
+    -fx-border-color: #1976D2;
+    -fx-border-width: 2;
+}
+
+/* ============================================================
+   CARDS (MODERN PANELS)
+   ============================================================ */
+.card {
+    -fx-background-color: white;
+    -fx-background-radius: 18;
+    -fx-padding: 22;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.20), 20, 0.3, 0, 6);
+}
+
+/* ============================================================
+   ANCHORPANE WRAPPED AS SECTION
+   ============================================================ */
+.anchor-pane {
+    -fx-padding: 12;
+}

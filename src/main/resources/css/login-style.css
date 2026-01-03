@@ -1,0 +1,94 @@
+/* Stil pentru background-ul principal */
+.root {
+    -fx-background-color: #1446A0; /* Culoare fundal principală - CORP ALBASTRU */
+}
+
+/* Stil pentru header-ul paginii (zona de sus) */
+.header {
+    -fx-background-color: #FFFFFF; /* Culoare header - ZONA ALBĂ */
+    -fx-padding: 10px;
+    -fx-alignment: center; /* Centrează logo-ul */
+    -fx-pref-height: 120px;
+}
+
+/* Stil pentru logo-ul aplicației */
+#logoImage {
+    -fx-fit-height: 80px;
+    -fx-fit-width: 100px;
+    -fx-preserve-ratio: true;
+}
+
+/* Stil pentru câmpurile de text (Username și Password) */
+#usernameField, #passwordField {
+    -fx-background-color: #FFFCF2;
+    -fx-border-color: #C8B3EE;
+    -fx-border-radius: 10px;
+
+    /* MĂRIRE CASUȚE */
+    -fx-font-size: 16px;
+    -fx-padding: 14px;
+    /* Sfârșit MĂRIRE CASUȚE */
+
+    -fx-text-fill: #031927;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 3, 0, 0, 1);
+    -fx-pref-width: 300px;
+}
+
+/* NOU: Stil pentru etichetele din formular (pentru "Username:" și "Password:") */
+.label-fields {
+    -fx-font-size: 14px;
+    -fx-text-fill: #E5E7E6; /* Text alb-deschis pe fundalul albastru */
+    -fx-font-weight: bold;
+}
+
+/* Stil pentru textul "Welcome back!" */
+#welcomeText {
+    -fx-font-family: "Dubai";
+    -fx-font-size: 30px; /* Ajustat pentru a se încadra mai bine */
+    -fx-text-fill: #E5E7E6;
+    -fx-font-weight: bold;
+    -fx-text-alignment: center;
+    -fx-wrap-text: true;
+    -fx-padding: 10;
+}
+
+#loginButton {
+
+-fx-background-color: #C6E2FF; /* Fundal mov deschis */
+-fx-text-fill: white; /* Text alb */
+-fx-font-size: 16px; /* Text mai mare */
+-fx-font-weight: bold;
+-fx-border-radius: 5px;
+-fx-background-radius: 5px;
+-fx-padding: 12 25;
+-fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 5, 0, 0, 2);
+-fx-opacity: 0.9;
+-fx-pref-width: 300px; /* Lățime consistentă cu câmpurile */
+
+}
+
+#loginButton:hover {
+-fx-background-color: #1446A0; /* Fundal roșu la hover */
+-fx-opacity: 1;
+}
+
+#signInButton {
+
+-fx-background-color: #C6E2FF; /* Fundal mov deschis */
+-fx-text-fill: white; /* Text alb */
+-fx-font-size: 12px; /* Text mai mare */
+-fx-font-weight: bold;
+-fx-border-radius: 5px;
+-fx-background-radius: 5px;
+-fx-padding: 12 25;
+-fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 5, 0, 0, 2);
+-fx-opacity: 0.9;
+-fx-pref-width: 100px; /* Lățime consistentă cu câmpurile */
+
+}
+
+#signInButton:hover {
+-fx-background-color: #1446A0; /* Fundal roșu la hover */
+-fx-opacity: 1;
+}
+
