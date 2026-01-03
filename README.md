@@ -76,3 +76,15 @@ This application was built with a focus on **Clean Code** and scalable architect
 1. **Clone the repository:**
    ```bash
    git clone [https://github.com/yourusername/SocialDuckNetwork.git](https://github.com/yourusername/SocialDuckNetwork.git)
+
+2. **Configure the Database: Update the database.properties file with your credentials:**
+
+## Properties
+
+db.url=jdbc:postgresql://localhost:5432/social_duck
+db.user=your_username
+db.password=your_password
+
+3. **Run the application:**
+   ```bash
+   mvn javafx:run
