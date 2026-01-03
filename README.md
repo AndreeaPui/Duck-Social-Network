@@ -79,7 +79,8 @@ This application was built with a focus on **Clean Code** and scalable architect
 
 2. **Configure the Database: Update the database.properties file with your credentials:**
 
-** Properties
+## Properties
+
 db.url=jdbc:postgresql://localhost:5432/social_duck
 
 db.user=your_username
